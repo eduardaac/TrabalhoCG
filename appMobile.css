@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+    background-color: #f0f0f0;
+  }
+  .controls {
+    display: flex;
+    gap: 20px;
+  }
+  button {
+    padding: 15px;
+    font-size: 18px;
+  }
+  
