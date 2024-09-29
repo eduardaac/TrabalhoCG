@@ -45,6 +45,9 @@ if (screenX > 600) {
   if (window.matchMedia("(orientation: portrait)").matches) {
     screen.orientation.lock("landscape").catch(err => console.error(err));
   }
+  else {
+    alert("Para uma melhor experiência de jogo, por favor, mude seu dispositivo para o modo paisagem.");
+  }
 }
 
 // Adiciona listener para garantir que a orientação permaneça em paisagem
