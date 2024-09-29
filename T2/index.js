@@ -41,22 +41,16 @@ if (screenX > 600) {
   scene.plataforma = "pc";
 } else {
   scene.plataforma = "mobile";
-  // Forçar modo paisagem se em modo retrato
+  // Verificar se o dispositivo está em modo retrato ao iniciar
   if (window.matchMedia("(orientation: portrait)").matches) {
-    screen.orientation.lock("landscape").catch(err => console.error(err));
-  }
-  else {
-    alert("Para uma melhor experiência de jogo, por favor, mude seu dispositivo para o modo paisagem.");
+      alert("O jogo é melhor jogado em modo paisagem. Por favor, mude seu dispositivo para o modo paisagem.");
   }
 }
 
-// Adiciona listener para garantir que a orientação permaneça em paisagem
-window.addEventListener("orientationchange", function () {
+// Adiciona listener para informar o usuário ao mudar para retrato
+window.addEventListener("orientationchange", function() {
   if (window.matchMedia("(orientation: portrait)").matches) {
-    screen.orientation.lock("landscape").catch(err => console.error(err));
-  }
-  else {
-    alert("Para uma melhor experiência de jogo, por favor, mude seu dispositivo para o modo paisagem.");
+      alert("Para uma melhor experiência de jogo, por favor, mude seu dispositivo para o modo paisagem.");
   }
 });
 
