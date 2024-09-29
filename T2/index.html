@@ -5,6 +5,51 @@
     <link rel="shortcut icon" href="../logo.png">
     <link rel="stylesheet" href="../html/resources/default.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <!-- Buttons stylesheet with main definitions, position colors etc-->
+    <link rel="stylesheet" href="../libs/other/buttons.css">
+    <style>
+      #joystickWrapper1 {
+        pointer-events: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        touch-action: manipulation;
+      }
+
+          /* Estilo para a tela inicial */
+    #start-screen {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Ocupa 100% da altura da viewport */
+    }
+
+    /* Estilo para a imagem */
+    #start-image {
+      width: 70%; /* Ocupa 80% da largura da tela */
+      height: auto; /* Mantém a proporção da imagem */
+      margin-bottom: 20px; /* Espaço entre a imagem e o botão */
+    }
+
+    /* Estilo para o botão */
+    #start-button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Efeito hover para o botão */
+    #start-button:hover {
+      background-color: darkgreen; /* Muda para um verde mais escuro ao passar o mouse */
+    }
+
+    </style>
 </head>
 
 <body>
@@ -14,17 +59,25 @@
     {"imports": {"three": "../build/three.module.js"}} 
   </script> 
 
-    <!-- Tela inicial com texto "OI" e botão -->
-    <div id="start-screen" style="text-align:center; margin-top: 20%;">
-      <h1>OI</h1>
-      <button id="start-button">Iniciar Jogo</button>
+    <!-- Tela inicial do jogo -->
+    <div id="start-screen">
+      <img id="start-image" src="./assets/top1.webp" alt="Imagem do Jogo">
+      <button id="start-button">Play</button>
     </div>
 
-    <!-- Tela de Final do Jogo -->
-    <div id="end-screen" style="display: none; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background-color: white; padding: 20px; border-radius: 10px;">
-      <h1>Final do Jogo</h1>
-      <button id="restart-button">Jogar Novamente</button>
+    <div id="joystickWrapper1"></div>
+    <div id="buttons_mobile" style="display: none;">
+      <button style="bottom:20px; right: 120px;" id="A" class="video-game-button">S</button>
+      <button style="bottom:20px; right: 20px;" id="shoot-button" class="video-game-button">T</button>
     </div>
+
+    <!-- Tela de término de jogo -->
+    <div id="end-screen" style="display: none; text-align: center; margin-top: 20%;">
+      <h1>Parabéns! Você venceu o jogo!</h1>
+      <button id="play-again-button">Jogar Novamente</button>
+    </div>
+
+    <script src="../libs/other/nipplejs.js"></script>
 
   <div id="webgl-output">        
     <script type="module" src="index.js"></script>
